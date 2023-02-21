@@ -1,41 +1,50 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 function App() {
-  const Fater = styled.div`
+  const Wrapper = styled.div`
     display: flex;
   `;
+  const rotatioAnimation = keyframes`
+  /* from {
+    transform: rotate(0deg);
+    border-radius: 0px;
+  } 
+  to {
+    transform: rotate(360deg);
+    border-radius: 100px;
+  } */
+  0% {
+    transform: rotate(0deg);
+    border-radius: 0px;
+  } 
+  50% {
+    transform: rotate(180deg);
+    border-radius: 100px;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-radius: 0px;
+  }
+  `;
   const Box = styled.div`
-    background-color: ${(props) => props.bgColor};
-    width: 100px;
-    height: 100px;
-  `;
-  const Circle = styled(Box)`
-    border-radius: 50px;
-  `;
-  const Btn = styled.button`
-    color: white;
+    width: 200px;
+    height: 200px;
     background-color: pink;
+    animation: ${rotatioAnimation} 9s linear infinite;
     border: 0;
-    border-radius: 15px;
   `;
-  const Input = styled.input.attrs({required: true, minLength: 10})`
-  background-color: pink;
+
+  const Test1 = styled.span`
+    font-size: 38px;
   `;
 
   return (
-    <Fater>
-      {/* <Box bgColor="black" /> */}
-      {/* <Circle bgColor="pink" /> */}
-      {/* <Btn>Log in</Btn>
-      <Btn as="a" href="https://www.google.com/">Log in</Btn>
-      <Btn as="h1">Log in</Btn> */}
-      <Input />
-      <Input />
-      <Input />
-      <Input />
-      <Input />
-      <Input />
-    </Fater>
+    <Wrapper>
+      <Box>
+        {/* <span>🤺🤺🤺🤺</span> */}
+        <Test1>🤺🤺🤺🤺</Test1>
+      </Box>
+    </Wrapper>
   );
 }
 
