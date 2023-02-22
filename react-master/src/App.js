@@ -31,18 +31,27 @@ function App() {
     height: 200px;
     background-color: pink;
     animation: ${rotatioAnimation} 9s linear infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 0;
+    span {
+      font-size: 50px;
+      &:hover {
+        font-size: 100px; 
+      }
+    }
   `;
 
-  const Test1 = styled.span`
-    font-size: 38px;
-  `;
+  // const Test1 = styled.span`
+  //   font-size: 38px;
+  // `;
 
   return (
     <Wrapper>
       <Box>
-        {/* <span>🤺🤺🤺🤺</span> */}
-        <Test1>🤺🤺🤺🤺</Test1>
+        <span>🤺</span>
+        {/* <Test1>🤺</Test1> */}
       </Box>
     </Wrapper>
   );
