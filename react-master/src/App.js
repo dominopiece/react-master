@@ -3,6 +3,10 @@ import styled, { keyframes } from "styled-components";
 function App() {
   const Wrapper = styled.div`
     display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
   `;
   const rotatioAnimation = keyframes`
   /* from {
@@ -26,6 +30,11 @@ function App() {
     border-radius: 0px;
   }
   `;
+
+  const Emoji = styled.span`
+    font-size: 50px;
+  `;
+
   const Box = styled.div`
     width: 200px;
     height: 200px;
@@ -35,10 +44,14 @@ function App() {
     justify-content: center;
     align-items: center;
     border: 0;
-    span {
-      font-size: 50px;
+    ${Emoji} {
+      /* span { */
+      /* font-size: 50px; */
       &:hover {
-        font-size: 100px; 
+        font-size: 100px;
+      }
+      &:active {
+        opacity: 0;
       }
     }
   `;
@@ -50,9 +63,12 @@ function App() {
   return (
     <Wrapper>
       <Box>
-        <span>🤺</span>
         {/* <Test1>🤺</Test1> */}
+        {/* <span>🤺</span> */}
+        <Emoji as="p">🤺</Emoji>
+        <Emoji>🤺</Emoji>
       </Box>
+      <Emoji>🤺</Emoji>
     </Wrapper>
   );
 }
