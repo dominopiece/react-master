@@ -1,29 +1,10 @@
 import React, { useState } from "react";
+import styled from "styled-components";
 
 function App() {
-  const [value, setValue] = useState("");
-  const onChange = (e: React.FormEvent<HTMLInputElement>) => {
-    const {
-      currentTarget: { value },
-    } = e;
-    setValue(value);
-  };
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(`Hello ${value}`);
-    console.log("Hello", value);
-  };
   return (
     <div>
-      <form onSubmit={onSubmit}>
-        <input
-          onChange={onChange}
-          value={value}
-          type="text"
-          placeholder="value"
-        />
-        <button>Log in</button>
-      </form>
+      test
     </div>
   );
 }
